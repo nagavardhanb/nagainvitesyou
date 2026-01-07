@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Its Mah BDay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ffd1dc, #ffe4ec, #fff0f5);
+        color: #5a2a3a;
+        padding: 20px;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 800px;
+        background: #ffffff;
+        border-radius: 25px;
+        padding: 35px 25px;
+        box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        border: 3px solid #ffb6c1;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+        margin: 0;
+        text-align: center;
+        color: #ff69b4;
+      }
+
+      h2 {
+        margin-top: 25px;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: #ff69b4;
+      }
+
+      p {
+        margin: 0;
+        opacity: 0.95;
+        text-align: center;
+      }
+
+      .gif {
+        width: 100%;
+        max-width: 340px;
+        border-radius: 18px;
+        display: block;
+        border: 4px solid #ffe4ec;
+      }
+
+      .highlight {
+        background: #ff69b4;
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 30px;
+        font-weight: 600;
+        margin-top: 8px;
+        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+      }
+
+      .venue,
+      .itinerary {
+        text-align: center;
+        width: 100%;
+      }
+
+      .itinerary ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px auto 0;
+        max-width: 500px;
+        text-align: left;
+      }
+
+      .itinerary li {
+        margin: 10px 0;
+        padding-left: 10px;
+        position: relative;
+      }
+
+      .itinerary li::before {
+        content: "🎀";
+        position: absolute;
+        left: -20px;
+      }
+
+      a.button {
+        margin-top: 10px;
+        padding: 12px 28px;
+        background: #ff69b4;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 500;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 6px 18px rgba(255, 105, 180, 0.4);
+      }
+
+      a.button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 24px rgba(255, 105, 180, 0.6);
+      }
+
+      footer {
+        margin-top: 30px;
+        font-size: 0.9rem;
+        opacity: 0.8;
+        text-align: center;
+        color: #ff69b4;
+        font-weight: 500;
+      }
+      #lockScreen {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #ffd1dc, #ffe4ec);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        z-index: 9999;
+        text-align: center;
+        color: #ff69b4;
+      }
+
+      #lockScreen input {
+        padding: 10px 15px;
+        border-radius: 20px;
+        border: 2px solid #ff69b4;
+        outline: none;
+        font-size: 1rem;
+        width: 200px;
+        text-align: center;
+      }
+
+      #lockScreen button {
+        padding: 10px 25px;
+        border-radius: 25px;
+        border: none;
+        background: #ff69b4;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      #errorMsg {
+        color: #d6336c;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="lockScreen">
+      <h1>🔐 Access Restricted</h1>
+      <p>Answer this to unlock the invite:</p>
+
+      <p><strong>How many followers are on my spam account?</strong></p>
+
+      <input type="number" id="answerInput" placeholder="Enter number" />
+
+      <button onclick="checkAnswer()">Unlock Invite</button>
+
+      <p id="errorMsg"></p>
+    </div>
+
+    <div class="card">
+      <h1>🎂 I’m Turning 24!</h1>
+      <p>I'm throwing a party!</p>
+      <p>
+        Hello, This yo man Naga. I cordially invite you to my birthday bash!
+        Your presence is expected. Miss it and the next invite would be of your
+        funeral.
+      </p>
+
+      <img
+        class="gif"
+        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGpvbGJnYWFqdTN2cnhsMmV4YjhtdGtuMGQwcnJudzFkdnEwdDA5NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYt5jPR6QX5pnqM/giphy.gif"
+        alt="birthday vibes"
+      />
+
+      <div class="highlight">09 January · 7:30 PM</div>
+
+      <h2>📍 Venue</h2>
+      <div class="venue">
+        <p><strong>Church Street Social</strong></p>
+        <p>Church Street, Bangalore</p>
+      </div>
+
+      <a
+        class="button"
+        target="_blank"
+        href="https://maps.google.com/?q=Church+Street+Social+Bangalore"
+      >
+        📍 Open in Google Maps
+      </a>
+
+      <h2>🍕 What’s the Plan?</h2>
+      <div class="itinerary">
+        <ul>
+          <li>7:30 PM – Arrive & pretend we’re classy</li>
+          <li>7:45 PM – Time to decide what to eat/drink.</li>
+          <li>8:30 PM – Attack!</li>
+          <li>9:30 PM – Roast the birthday guy (Be prepared for retreat)</li>
+          <li>Whenever – Photos</li>
+        </ul>
+      </div>
+
+      <img
+        class="gif"
+        src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnJhZjh5ZGp2czUyeG9sb21xOTlxaDZpa3UzdzV0djhzYmE4bmU2YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U4DswrBiaz0p67ZweH/giphy.gif"
+        alt="party mode"
+      />
+
+      <footer>Dress Code: Not Naked (Optional)</footer>
+    </div>
+    <script>
+      const CORRECT_ANSWER = 11; // 👈 CHANGE THIS
+
+      function checkAnswer() {
+        const userAnswer = document.getElementById("answerInput").value;
+
+        if (Number(userAnswer) === CORRECT_ANSWER) {
+          document.getElementById("lockScreen").style.display = "none";
+        } else {
+          document.getElementById("errorMsg").innerText =
+            "Wrong 😌 You are not close enough to know this.";
+        }
+      }
+    </script>
+  </body>
+</html>
